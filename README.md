@@ -1,27 +1,26 @@
-# Frontend
+# Saint Andrew's School
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+## Administración de Aulas
 
-## Development server
+Este proyecto del lado del frontend ha sido desarrollado con el framework **Angular**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Requisitos:
 
-## Code scaffolding
+- **Tener el Backend en funcionamiento**
+- **Node.js V 20.11 o superior**
+- **Angular CLI V17.1 o superior**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Ejecución:
 
-## Build
+1. Ejecutar en la consola el comando **"npm install"**
+2. Ejecutar el comando **"ng serve"** esto ejecutará el proyecto en http://localhost:4200
+3. Por defecto el proyecto consume la data del **API Laravel** en dirección http://localhost:8000/api puede modificar esto si se desea en src/environments/environment.development.ts se encuantran las variables de entorno que deberían verse de la siguiente manera.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```Typescript
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8000/api',
+};
+```
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Modifique la propiedad **apiUrl** según se requiera
