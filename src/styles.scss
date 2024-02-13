@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+$primary: #12335e;
+$success: #0ea42a;
+$warning: #fdd808;
+$danger: #c21935;
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+:root {
+  --primary-color: #12335e;
+  --info-color: #98a6d4;
+  --secondary-color: #6c757d;
+  --white-color: #fff;
+  --success-color: #0bd02f;
+  --warning-color: #fdd808;
+  --danger-color: #c21935;
+  --background-color: #f0f2f9;
+}
+
+.info-snackbar {
+  --mdc-snackbar-container-color: var(--info-color) !important;
+}
+.success-snackbar {
+  --mdc-snackbar-container-color: var(--success-color) !important;
+}
+.warning-snackbar {
+  --mdc-snackbar-container-color: var(--warning-color) !important;
+}
+.error-snackbar {
+  --mdc-snackbar-container-color: var(--danger-color) !important;
+}
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  max-width: 350px !important;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}

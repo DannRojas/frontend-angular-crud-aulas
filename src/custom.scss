@@ -1,0 +1,118 @@
+$my-primary: (
+  50: #e3e7ec,
+  100: #b8c2cf,
+  200: #8999af,
+  300: #59708e,
+  400: #365276,
+  500: #12335e,
+  600: #102e56,
+  700: #0d274c,
+  800: #0a2042,
+  900: #051431,
+  A100: #6a92ff,
+  A200: #376dff,
+  A400: #0448ff,
+  A700: #003fea,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$my-accent: (
+  50: #fffae8,
+  100: #fff3c5,
+  200: #ffeb9e,
+  300: #ffe377,
+  400: #ffdd59,
+  500: #ffd73c,
+  600: #ffd336,
+  700: #ffcd2e,
+  800: #ffc727,
+  900: #ffbe1a,
+  A100: #ffffff,
+  A200: #fffffe,
+  A400: #ffefcb,
+  A700: #ffe7b2,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$my-warn: (
+  50: #f8e3e7,
+  100: #edbac2,
+  200: #e18c9a,
+  300: #d45e72,
+  400: #cb3c53,
+  500: #c21935,
+  600: #bc1630,
+  700: #b41228,
+  800: #ac0e22,
+  900: #9f0816,
+  A100: #ffcbce,
+  A200: #ff989f,
+  A400: #ff656f,
+  A700: #ff4c57,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+@use "@angular/material" as mat;
+// @import "@angular/material/theming";
+
+$my-primary: mat.define-palette($my-primary);
+$my-accent: mat.define-palette($my-accent);
+$my-warn: mat.define-palette($my-warn);
+
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+      warn: $my-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+@include mat.all-component-themes($light-theme);

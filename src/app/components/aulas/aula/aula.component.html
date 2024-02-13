@@ -1,0 +1,85 @@
+<ng-template #aulaDialog let-element>
+  <div class="card border-none">
+    <div class="card-body">
+      <p class="h2">{{ element ? "Edición" : "Registro" }} de Aula</p>
+      <form
+        class="row mt-4"
+        [formGroup]="aulaForm"
+        (ngSubmit)="this.onSaveData()"
+      >
+        <mat-form-field appearance="outline" class="col-12">
+          <mat-label>Nombre:</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Nombre o código del aula"
+            formControlName="nombre"
+          />
+          <mat-error *ngIf="aulaForm.controls['nombre'].hasError('required')">
+            Requerido
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-12">
+          <mat-label>Descripción del aula:</mat-label>
+          <textarea
+            matInput
+            placeholder="Descripción del aula"
+            formControlName="descripcion"
+          ></textarea>
+          <mat-error
+            *ngIf="aulaForm.controls['descripcion'].hasError('required')"
+          >
+            Requerido
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-12">
+          <mat-label>Capacidad:</mat-label>
+          <input
+            type="number"
+            matInput
+            placeholder="Capacidad del aula"
+            formControlName="capacidad"
+          />
+          <mat-error *ngIf="aulaForm.controls['capacidad'].invalid">
+            Requerido, positivo
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-12">
+          <mat-label>Tipo de aula:</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Tipo de aula"
+            formControlName="tipo"
+          />
+          <mat-error *ngIf="aulaForm.controls['tipo'].hasError('required')">
+            Requerido
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-12">
+          <mat-label>Equipamiento del aula:</mat-label>
+          <textarea
+            matInput
+            placeholder="Equipamiento del aula"
+            formControlName="equipamiento"
+          ></textarea>
+          <mat-error
+            *ngIf="aulaForm.controls['equipamiento'].hasError('required')"
+          >
+            Requerido
+          </mat-error>
+        </mat-form-field>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary">Guardar</button>&nbsp;
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            mat-dialog-close
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>

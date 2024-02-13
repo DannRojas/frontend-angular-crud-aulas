@@ -1,0 +1,13 @@
+<div class="background-color pb-3">
+  <div class="cont">
+    <button mat-icon-button (click)="dialogRef.close(false)" color="primary">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="container">
+    <ng-template
+      [ngTemplateOutlet]="data.template"
+      [ngTemplateOutletContext]="{ $implicit: data.element }"
+    ></ng-template>
+  </div>
+</div>

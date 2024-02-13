@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <p class="mb-0">
+      <mat-icon>{{ getIcon }}</mat-icon> &nbsp;<b>{{ data.title }}</b>
+    </p>
+    <ng-container *ngIf="_array.isArray(data.message); else message">
+      <div *ngFor="let message of data.message">
+        <p class="mb-0 mt-1">{{ message }}</p>
+      </div>
+    </ng-container>
+    <ng-template #message>
+      <p *ngIf="data.message" class="mb-0 mt-1">{{ data.message }}</p>
+    </ng-template>
+  </div>
+</div>
